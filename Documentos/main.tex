@@ -25,6 +25,17 @@
 Los microprocesadores son herramientas que pueden ejecutar una gran cantidad de instrucciones en un segundo, por lo que, para hacer uso del mayor potencial de sus capacidades, se opta eficiente por las ventajas que deja el sistema de las interrupciones como se podrá apreciar a continuación. Aun así, el concepto de éstas interrupciones es un poco más complejo de entender, debido a que es poco intuitivo a lo que se viene aprendiendo en los cursos básicos de computación y programación, en donde la mayoría de procesos se ejecuta de una manera continua. Se enunciará entonces, su definición, su historia, los tipos que existen y la forma de implementarlos teniendo como objetivo el conocer que son y para que se usan las interrupciones a nivel del microprocesador.
 \newpage
 
+\section*{¿Qué es una interrupción en el contexto de los microprocesadores?}
+
+\setlength{\parindent}{31pt}
+Una definición para el concepto de interrupción podría ser: Una interrupción consiste en un mecanismo que provoca la alteración del orden lógico de ejecución de instrucciones como respuesta a un evento externo, generado por el hardware de entrada/salida en forma asincrónica al programa que está siendo ejecutado y fuera de su control. \parencite{ArquitecturaCom}.
+
+\setlength{\parindent}{31pt}
+Como se expresa en la definición una interrupción es un mecanismo que altera la secuencia lógica de ejecución, por lo que la próxima instrucción a ejecutarse no es la que se tenía prevista inicialmente en el del orden lógico, sino que se pasa a la primera instrucción de otro servicio o proceso causante de la interrupción.
+
+\setlength{\parindent}{31pt}
+El programa de interrupción es semejante a una subrutina, ya que debe almacenar los datos de estado y registro y conservar el contenido del microprocesador antes de la interrupción.\parencite{IntroMicropro}.
+
 
 
 \end{document}\raggedright
