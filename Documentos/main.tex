@@ -78,4 +78,11 @@ Normalmente en una comunicación con el microprocesador, responderá como se mue
 \setlength{\parindent}{31pt}
 Se presentan también interrupciones múltiples, en donde los dispositivos de micro procesamiento, generalmente están limitados en cuanto al número de conexiones y en ocasiones cuentan con algunas conexiones de señales dedicados para interrupciones. Cuando se requiere que una gran cantidad de dispositivos E/S, se interrelacionen con el sistema de micro procesamiento, las líneas de solicitud de estos dispositivos se someten a una operación “o” lógica, tal como se muestra en la Figura ~\ref{fig:diagrama2}.
 
+\section*{¿Cómo se hace la implementación de interrupciones a nivel de hardware?}
+
+\setlength{\parindent}{31pt}
+Una interrupción por hardware es un mecanismo de comunicación entre el procesador y los dispositivos de E/S. Sirve para indicar que un dispositivo de E/S tiene datos pendientes de ser tratados. Las interrupciones por hardware evitan que el sistema operativo tenga que muestrear periódicamente el estado de los dispositivos de E/S, de manera que son ellos mismos los que indican que hay datos para ser tratados. \parencite{Int_Ex}.
+
+\setlength{\parindent}{31pt}
+ El agente generador o solicitante de la interrupción activa la mencionada señal cuando necesita que se le atienda, es decir, que se ejecute un programa que le atienda. \parencite{Micro} Ante la solicitud de una interrupción, siempre y cuando esté habilitado ese tipo de interrupción, la unidad de control realiza un ciclo de aceptación de interrupción. 
 \end{document}\raggedright
