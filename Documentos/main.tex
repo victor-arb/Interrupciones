@@ -41,4 +41,41 @@ El programa de interrupción es semejante a una subrutina, ya que debe almacenar
 \setlength{\parindent}{31pt}
 No se puede hablar propiamente de la historia de las interrupciones, pero se sabe que están presentes desde la invención de los controladores basados en la arquitectura de von Neumann y los microcontroladores, ya que había la necesidad de interactuar con los periféricos externos, pero no de forma mecánica, sino mediante un software provisto de instrucciones al procesador. Inicialmente, la técnica que se empleo fue que el propio controlador se encargase de sondear el dispositivo cada cierta cantidad de tiempo "polling" para conocer en qué momento ejecutar la interrupción. Después, para desentenderse de ésta problemática se optó propiamente por los conceptos de interrupciones, en donde se delega la responsabilidad al periférico para que avise de la necesidad de "interrumpir" un proceso y  así evitar el estar sondeando cada cierto tiempo.
 
+\section*{¿Qué tipo de interrupciones existen?}
+
+\setlength{\parindent}{31pt}
+En general sobre el tipo de interrupciones, existen las internas y externas.
+
+\setlength{\parindent}{31pt}
+Una interrupción externa es aquella que proviene de un dispositivo E/S (entrada / salida) y una interrupción interna es una compuerta de estado o un señalamiento dentro del microprocesador que pueden ser activados o desactivados mediante instrucciones de interrupción especiales. 
+
+\setlength{\parindent}{31pt}
+Generalmente, cuando se desactiva una interrupción interna, el microprocesador no da servicio a interrupciones externas. Contrariamente si se activa la interrupción interna, el sistema puede responder a interrupciones externas. Cuando se atiende a una interrupción, lo primero que el microprocesador hace, es desactivar las interrupciones internas para evitar atender otras interrupciones.
+
+\setlength{\parindent}{31pt}
+Se presenta otro tipo de interrupciones, pero solo en algunos microprocesadores, los cuales cuentan con líneas de interrupción no enmascarables mediante las cuales se hace caso omiso del estado de la compuerta de interrupción interna y se siguen aceptando interrupciones.
+
+\begin{figure}[h!] %invoca una figura con el parámetro here
+    \raggedright
+        \begin{subfigure}[b]{0.45\linewidth}
+            \includegraphics[width=\linewidth]{Figuras/diagrama1.png}
+            \caption{Comunicación típica del microprocesador}
+            \label{fig:diagrama1}
+        \end{subfigure}
+    \raggedleft
+        \begin{subfigure}[b]{0.45\linewidth}
+            \includegraphics[width=\linewidth]{Figuras/diagrama2.png}
+            \caption{Secuencia del programa de interrupción}
+            \label{fig:diagrama2}
+        \end{subfigure}
+    \caption{Diagramas de interrupciones}
+    \label{fig:Diagramas}
+\end{figure}
+
+\setlength{\parindent}{31pt}
+Normalmente en una comunicación con el microprocesador, responderá como se muestra  en la Figura ~\ref{fig:diagrama1}.
+
+\setlength{\parindent}{31pt}
+Se presentan también interrupciones múltiples, en donde los dispositivos de micro procesamiento, generalmente están limitados en cuanto al número de conexiones y en ocasiones cuentan con algunas conexiones de señales dedicados para interrupciones. Cuando se requiere que una gran cantidad de dispositivos E/S, se interrelacionen con el sistema de micro procesamiento, las líneas de solicitud de estos dispositivos se someten a una operación “o” lógica, tal como se muestra en la Figura ~\ref{fig:diagrama2}.
+
 \end{document}\raggedright
