@@ -85,4 +85,16 @@ Una interrupción por hardware es un mecanismo de comunicación entre el procesa
 
 \setlength{\parindent}{31pt}
  El agente generador o solicitante de la interrupción activa la mencionada señal cuando necesita que se le atienda, es decir, que se ejecute un programa que le atienda. \parencite{Micro} Ante la solicitud de una interrupción, siempre y cuando esté habilitado ese tipo de interrupción, la unidad de control realiza un ciclo de aceptación de interrupción. 
+ 
+ \section*{ ¿Cómo se implementan las interrupciones por software?}
+
+\setlength{\parindent}{31pt}
+Una interrupción por software es un mecanismo de comunicación entre un proceso (que se ejecuta en modo usuario) y el sistema operativo (que se ejecuta en modo supervisor). El proceso emplea las interrupciones por software para notificar al sistema operativo que requiere de su intervención. En procesadores x86, para lanzar una interrupción por software un proceso ejecuta la instrucción int seguida de un número de 16 bits que indica el tipo de interrupción por software. Por ejemplo, las llamadas al sistema en x86 se implementan mediante interrupciones por software, por medio de la instrucción int 0x80 (sin embargo, hoy día las arquitecturas de los procesadores modernos vienen con instrucciones especializadas para la invocación de llamadas al sistema como syscall en x86, por tanto, esta técnica ha caído en desuso). \parencite{Int_Ex}.
+
+\setlength{\parindent}{31pt}
+Más genéricamente aplica cuando hay múltiples controladores conectados en OR a la misma entrada de INT, sea ésta única o no. \parencite{ArquitecturaCom}. En esta situación la rutina de servicio de la interrupción debe tener una parte inicial que consista en el recorrido de los distintos controladores de E/S, leyendo los registros de estado hasta encontrar aquél que tenga su bit de "pedido de interrupción" en "1". En ese caso se invocará a la sub-rutina asociada a ese controlador específico.
+
+\setlength{\parindent}{31pt}
+Para éstos procesos de interrupciones por software, se marca una mayor eficiencia cuando se utiliza el lenguaje ensamblador o lenguaje de máquina para comunicarse directamente con el microprocesador
+
 \end{document}\raggedright
